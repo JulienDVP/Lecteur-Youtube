@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +22,43 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hcU-39-foh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChansonCell" rowHeight="207" id="l4N-f7-VZo" customClass="ChansonCell" customModule="Lecteur_Youtube" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="207"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l4N-f7-VZo" id="EHr-wr-kaP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="206.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-7j-cHa">
+                                                    <rect key="frame" x="23" y="28.5" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="gw0-sZ-skV"/>
+                                                        <constraint firstAttribute="width" constant="150" id="yeo-Vb-CIS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyf-x3-RAJ">
+                                                    <rect key="frame" x="181" y="16" width="179" height="175"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hyf-x3-RAJ" secondAttribute="trailing" id="3mB-dB-kZW"/>
+                                                <constraint firstItem="hyf-x3-RAJ" firstAttribute="leading" secondItem="F4C-7j-cHa" secondAttribute="trailing" constant="8" id="5z9-zm-XBb"/>
+                                                <constraint firstItem="F4C-7j-cHa" firstAttribute="centerY" secondItem="EHr-wr-kaP" secondAttribute="centerY" id="9d1-3Y-ey9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hyf-x3-RAJ" secondAttribute="bottom" constant="5" id="SFo-d3-Mv8"/>
+                                                <constraint firstItem="F4C-7j-cHa" firstAttribute="leading" secondItem="EHr-wr-kaP" secondAttribute="leadingMargin" constant="8" id="njX-38-uVX"/>
+                                                <constraint firstItem="hyf-x3-RAJ" firstAttribute="top" secondItem="EHr-wr-kaP" secondAttribute="topMargin" constant="5" id="pgM-Me-HIz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artisteEtTitreLabel" destination="hyf-x3-RAJ" id="UdG-n6-fam"/>
+                                            <outlet property="miniature" destination="F4C-7j-cHa" id="Akv-10-G6b"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,4 +98,7 @@
             <point key="canvasLocation" x="233" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="960" height="553"/>
+    </resources>
 </document>
